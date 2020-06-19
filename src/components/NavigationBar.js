@@ -1,18 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import pages from '../config/pages'
 
 export class NavigationBar extends React.PureComponent {
     render() {
-        const pages = [
-            {
-                title : "Home",
-                route : "/"
-            },
-            {
-                title : "Projects",
-                route : "/projects"
-            }
-        ]
         return (
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="collapse navbar-collapse" id="navbarColor01">
