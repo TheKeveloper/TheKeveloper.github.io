@@ -12,6 +12,10 @@ const social_links = [
     {
         text: "LinkedIn",
         url: "https://www.linkedin.com/in/kevin-bi-006426148/"
+    },
+    {
+        text: "StackOverflow",
+        url: "https://stackoverflow.com/users/8371811/keveloper"
     }
 ]
 export class SocialBar extends React.PureComponent {
