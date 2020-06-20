@@ -3,10 +3,19 @@ const tags = {
     academic : "Academic",
     extracurricular : "Extracurricular",
     tech : "Tech",
-    leadership : "Leadership"
+    finance : "Finance",
+    leadership : "Leadership",
+    political : "Political"
 };
 
 const experiences = [
+    {
+        title : "Bridgewater Associates",
+        url: "https://www.bridgewater.com/",
+        subtitle: "Investment Associate Intern",
+        description: "Participating in the Bridgwater Investment Associates internship program starting July 2020.",
+        tags : [tags.internship, tags.finance]
+    }, 
     {
         title: "Harvard Open Data Project",
         date: "2018 - 2020",
@@ -19,6 +28,13 @@ const experiences = [
         title: "Economics Research Assistant",
         date: "Fall 2019 - Current",
         description: "Worked as a research assistant to Professor Stefanie Stantcheva and Alberto Alesina. For Professor Stantcheva, I created a website and helped create/analyze a survey. For Professor Alesina, I helped review math for a political economy paper and helped debug R code for a statistical analysis.",
+        tags: [tags.academic]
+    },
+    {
+        title: "ECON 1011A Course Assistant",
+        date : "Fall 2019 - Current",
+        subtitle: "Microeconomic Theory: Advanced",
+        description: "Helped teach the advanced microeconomic course by answering student questions, reviewing assignments, and holding office hours.",
         tags: [tags.academic]
     },
     {
@@ -37,6 +53,30 @@ const experiences = [
         `,
         tags : [tags.internship, tags.tech]
     },
+    {
+        title: "Harvard Decision Science Lab",
+        subtitle: "Research Assistant",
+        url: "http://decisionlab.harvard.edu/",
+        date: "Fall 2018",
+        description: "Worked as a Research Assistant at the Harvard Decision Science Lab. I helped test out new psychology experiments and offered feedback to researchers. I also helped run the lab, including by making improvements to the finance tracking system on the website",
+        tags: [tags.academic]
+    },
+    {
+        title: "Allianz Life Insurancy Company of North America",
+        url: "https://www.allianzlife.com/",
+        subtitle: "IT Intern",
+        date: "Summer 2018",
+        description: "Was named the intern of the year out of 60+ interns. Developed a proposal to implement an API for external data access that won proposal competition and was slated to be implemented. Created web apps for easily executing SQL queries and for automatically entering test data using Selenium. ",
+        tags: [tags.internship, tags.tech]
+    },
+    {
+        title: "McCollum for Congress",
+        url: "https://www.mccollumforcongress.com/",
+        subtitle: "Field Fellow",
+        date: "Summer 2016",
+        description: "Workd as a Field Fellow for the campaign of Congresswoman Betty McCollumn (MN-4). Made phone calls and door knocked on behalf of the campaign. Also helped analyze precinct-level primary election results to better target campaign resources during the general election.",
+        tags: [tags.internship, tags.political]
+    }
 ];
 
 export {tags, experiences};
