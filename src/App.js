@@ -6,6 +6,7 @@ import { Header } from './components/Header'
 import pages from './config/pages'
 import { NavigationBar } from './components/NavigationBar'
 import './css/App.css'
+import { SocialBar } from './components/SocialBar';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <Router basename = "/">
         <div className="App container">
           <Header />
+          <SocialBar />
           <NavigationBar />
           <div className = "container content-container" style = {{marginTop: 10}}>
             <Switch>
