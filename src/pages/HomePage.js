@@ -1,9 +1,11 @@
 import React from 'react'
 import { Section } from '../components/TextComponents'
 import { NavLink } from 'react-router-dom'
+import Utils from '../Utils'
 
 export class HomePage extends React.PureComponent {
     render() {
+        Utils.logPageview("/")
         return (
             <div className = "HomePage">
                 <Section title = "Hi">

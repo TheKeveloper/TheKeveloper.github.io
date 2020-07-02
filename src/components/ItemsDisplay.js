@@ -1,6 +1,5 @@
 import React from 'react'
 import { ScrollableListView } from './ScrollableListView'
-import {tags, projects } from '../config/projects'
 import { ListItem } from './ListItem'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
@@ -10,7 +9,6 @@ export class ItemsDisplay extends React.PureComponent {
         selectedTags : []
     }
     handleChange = (selectedTags) => {
-        console.log(selectedTags);
         if(selectedTags) {
             this.setState({ selectedTags : selectedTags.map(selected => selected.value) })
         }

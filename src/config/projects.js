@@ -22,8 +22,16 @@ const projects = [
         date : "2018 - 2020",
         url: "http://hodp.org/",
         repo: "https://github.com/Understanding-Economics/Understanding-Economics.github.io",
-        description: "Website for the Harvard Open Data Project. I helped transition the website to a Flask backend and developed the authentication system for HODP members",
+        description: "Website for the Harvard Open Data Project. I helped transition the website to a Flask backend and developed the authentication system for HODP members.",
         tags : [tags.hodp, tags.development, tags.website]
+    },
+    { 
+        title : "Harvard in the Age of COVID-19",
+        date : "July 2020",
+        url: "https://medium.com/harvard-open-data-project/harvard-in-the-age-of-covid-19-1b06e6501335",
+        repo: "https://github.com/TheKeveloper/HODP-COVID",
+        description: "Analysis of HODP survey data on student response to COVID-19 throughout the Spring 2020 semester at Harvard.",
+        tags : [tags.hodp, tags.article]
     },
     {
         title: "Do Police Protests Work?",
