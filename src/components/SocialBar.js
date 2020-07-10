@@ -3,7 +3,7 @@ import React from 'react'
 const social_links = [
     {
         text: "GitHub",
-        url: "https://github.com/"
+        url: "https://github.com/TheKeveloper"
     },
     {
         text: "Email",
