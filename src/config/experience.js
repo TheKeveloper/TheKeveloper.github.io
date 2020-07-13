@@ -11,6 +11,7 @@ const tags = {
 const experiences = [
     {
         title : "Bridgewater Associates",
+        date : "July-August 2020", 
         url: "https://www.bridgewater.com/",
         subtitle: "Investment Associate Intern",
         description: "Participating in the Bridgwater Investment Associates internship program starting July 2020.",

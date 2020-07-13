@@ -25,6 +25,14 @@ const projects = [
         description: "Website for the Harvard Open Data Project. I helped transition the website to a Flask backend and developed the authentication system for HODP members.",
         tags : [tags.hodp, tags.development, tags.website]
     },
+    {
+        title: "What will Harvard students do this Fall?",
+        date : "July 2020", 
+        url: "https://medium.com/harvard-open-data-project/what-will-harvard-students-do-this-fall-cdccb698eb61",
+        repo: "https://github.com/TheKeveloper/HODP-Fall-2020-Analysis",
+        description: "A data-driven look at how Harvard students are responding to the university’s policy for the Fall 2020 semester.",
+        tags : [tags.hodp, tags.article]
+    },
     { 
         title : "Harvard in the Age of COVID-19",
         date : "July 2020",
