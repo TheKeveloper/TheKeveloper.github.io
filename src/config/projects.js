@@ -7,15 +7,23 @@ const tags = {
     mobile : "Mobile app",
     hodp : "Harvard Open Data Project", 
     hpr : "Harvard Political Review",
+    academic : "Academic"
 }
 const projects = [
+    {
+        title : "ECON 1011A Textbook",
+        date : "2020",
+        url: "https://github.com/TheKeveloper/ECON-1011A-Textbook/blob/master/textbook.pdf",
+        description: "Co-authoring a textbook to assist in online learning for Harvard's ECON 1011A: Intermediate Microeconomics - Advanced.",
+        tags : [tags.academic]
+    }, 
     { 
         title : "Understanding Economics Website",
         date : "Spring 2020",
         url : "https://understandingeconomics.org/",
         repo : "https://github.com/Understanding-Economics/Understanding-Economics.github.io",
         description: "Website to display survey response data for a research project by Professor Stefanie Stantcheva.",
-        tags : [tags.research, tags.development, tags.website]
+        tags : [tags.research, tags.development, tags.website, tags.academic]
     },
     {
         title: "HODP Website",
@@ -53,14 +61,14 @@ const projects = [
         date: "Spring 2020", 
         url : "https://github.com/TheKeveloper/ECON-1425-Project/blob/master/econ1425_paper.pdf",
         description : "My paper for ECON 1425: Political Economics. In this paper, I examine empirically the buliding of legislative relationships in the U.S. Congress through bill cosponsorships. I find that more prestigious legislators have more cospnosors per bill, and that those who cosponsor more often are more likely to become lobbyists after leaving Congress.",
-        tags : [tags.paper, tags.research]
+        tags : [tags.paper, tags.research, tags.academic]
     },
     {
         title: "The Queerness of Queerness",
         date: "Fall 2019",
         url: "https://github.com/TheKeveloper/The-Queerness-of-Queerness-Paper/blob/master/main.pdf",
         description: "My paper for PHIL 173: Metaethics, critiquing J.L. Mackie's anti-realist argument from Queerness.",
-        tags : [tags.paper]
+        tags : [tags.paper, tags.academic]
     },
     { 
         title : "Our UC prediction got dunked on. Here’s why.",
@@ -110,7 +118,7 @@ const projects = [
         date: "Fall 2018",
         url: "https://github.com/TheKeveloper/PSY-15-Final-Project/blob/master/main.pdf",
         description: "My paper for PSY 15: Social Psychology, where I conduct an experiment on whether monetary or altruistic incentives are more effective at obtaining survey responses",
-        tags : [tags.paper, tags.research]
+        tags : [tags.paper, tags.research, tags.academic]
     }, 
     {
         title: "How Diverse Are Harvard Employees?: A Study of Gender and Race",
