@@ -1,19 +1,38 @@
-import React from 'react'
-import { Section } from '../components/TextComponents'
-import { NavLink } from 'react-router-dom'
-import Utils from '../Utils'
+import React from "react";
+import { Section } from "../components/TextComponents";
+import Utils from "../Utils";
 
 export class HomePage extends React.PureComponent {
-    render() {
-        Utils.logPageview("/")
-        return (
-            <div className = "HomePage">
-                <Section title = "Hi">
-                    <p>
-                        I'm Kevin. I'm from Minnesota and I'm a member of the Harvard College Class of 2021. I'm studying Applied Mathematics with a focus in Economics. I was the President of the <a href = "http://hodp.org" target = "_blank">Harvard College Open Data Project</a> from 2019-2020. My academic interests include: microeconomic theory, game theory, real analysis, and probability. See the <NavLink exact to="/projects">Projects</NavLink> page for things that I've worked on or am currently working on. 
-                    </p>
-                </Section>
-            </div>
-        )
-    }
+  render() {
+    Utils.logPageview("/");
+    return (
+      <div className="HomePage">
+        <Section title="Hi">
+          <p>
+            I'm Kevin. I'm grew up in Minnesota but currently live in New
+            Jersey.
+          </p>
+
+          <p>
+            I currently work at Palantir as the backend tech lead for the
+            Simulation and Unmanned Systems Team. Our team manages command and
+            control, simulation, and live video playback for unmanned vehicles
+            in the Palantir ecosystem.
+          </p>
+
+          <p>
+            I also manage 4 direct reports who are all backend engineers on my
+            team, and I conduct hiring manager interviews for early talent at
+            Palantir.
+          </p>
+
+          <p>
+            I graduated <i>summa cum laude</i> from Harvard in 2021, where I
+            studied Applied Mathematics with a focus in Economics. I minored in
+            Computer Science.
+          </p>
+        </Section>
+      </div>
+    );
+  }
 }
