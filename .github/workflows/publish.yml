@@ -18,11 +18,24 @@ jobs:
         with:
           fetch-depth: 2
 
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Replace with the Node.js version you need
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run the npm script
+      - name: Predeploy
+        run: npm run predeploy
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/react'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./bulid
           publish_branch: master
