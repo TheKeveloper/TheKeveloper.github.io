@@ -37,5 +37,5 @@ jobs:
         if: github.ref == 'refs/heads/react'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bulid
+          publish_dir: ./build
           publish_branch: master
