@@ -7,7 +7,7 @@ const social_links = [
   },
   {
     text: "Email",
-    url: "mailto:kevinbi@college.harvard.edu",
+    url: "mailto:keveloper@gmail.com",
   },
   {
     text: "LinkedIn",
