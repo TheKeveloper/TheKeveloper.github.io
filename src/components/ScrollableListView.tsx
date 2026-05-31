@@ -1,8 +1,8 @@
-import { ReactNode } from 'react'
-import { Stack } from '@mantine/core'
+import { ReactNode } from "react";
+import { Stack } from "@mantine/core";
 
 interface ScrollableListViewProps {
-  items: ReactNode[]
+  items: ReactNode[];
 }
 
 export function ScrollableListView({ items }: ScrollableListViewProps) {
@@ -12,5 +12,5 @@ export function ScrollableListView({ items }: ScrollableListViewProps) {
         <div key={idx}>{item}</div>
       ))}
     </Stack>
-  )
+  );
 }
