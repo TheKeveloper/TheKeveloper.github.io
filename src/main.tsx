@@ -1,14 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { MantineProvider } from '@mantine/core'
+import { RouterProvider } from '@tanstack/react-router'
 import '@mantine/core/styles.css'
-import App from './App'
+import { router } from './router'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MantineProvider>
-      <App />
+      <RouterProvider router={router} />
     </MantineProvider>
   </React.StrictMode>,
 )
