@@ -19,7 +19,11 @@
     "deploy": "gh-pages -d dist -b gh-pages"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,css,md,html}": "prettier --write"
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,html}": "prettier --write"
   },
   "dependencies": {
     "@mantine/core": "^9.2.2",
