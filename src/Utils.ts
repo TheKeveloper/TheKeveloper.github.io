@@ -1,9 +1,6 @@
-import ReactGA from 'react-ga'
-
 const Utils = {
-  logPageview: (url: string) => {
-    ReactGA.set({ page: url })
-    ReactGA.pageview(url)
+  logPageview: (_url: string) => {
+    // Analytics logging removed - can be replaced with a modern analytics library
   },
 }
 

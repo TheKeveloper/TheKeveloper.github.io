@@ -1,7 +1,9 @@
+import { Title } from '@mantine/core'
+
 export function Header() {
   return (
-    <div className="header" style={{ textAlign: 'center' }}>
-      <h1>Kevin Bi</h1>
-    </div>
+    <Title order={1} ta="center">
+      Kevin Bi
+    </Title>
   )
 }

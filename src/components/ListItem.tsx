@@ -1,3 +1,5 @@
+import { Card, Text, Group, Badge, Anchor } from '@mantine/core'
+
 export interface ItemData {
   title: string
   date: string
@@ -14,52 +16,39 @@ interface ListItemProps {
 
 export function ListItem({ item }: ListItemProps) {
   return (
-    <div
-      className="card h-100"
-      style={{
-        borderRadius: 10,
-        borderColor: 'grey',
-        borderWidth: 3,
-        padding: 10,
-        fontSize: '12pt',
-      }}
-    >
-      <span>
-        <strong style={{ fontSize: '14pt' }}>
+    <Card withBorder radius="md" padding="sm">
+      <Group justify="space-between" wrap="nowrap">
+        <Text fw={700} size="lg">
           {item.url ? (
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <Anchor href={item.url} target="_blank" rel="noopener noreferrer">
               {item.title}
-            </a>
+            </Anchor>
           ) : (
             item.title
-          )}
-        </strong>{' '}
-        <span>
+          )}{' '}
           {item.repo ? (
-            <a href={item.repo} target="_blank" rel="noopener noreferrer">
+            <Anchor href={item.repo} target="_blank" rel="noopener noreferrer" size="sm">
               (GitHub)
-            </a>
+            </Anchor>
           ) : null}
-        </span>
-        <span style={{ float: 'right', marginRight: 30 }}>{item.date}</span>
-      </span>
+        </Text>
+        <Text size="sm" c="dimmed">
+          {item.date}
+        </Text>
+      </Group>
       {item.subtitle ? (
-        <span>
-          <i>{item.subtitle}</i>
-        </span>
+        <Text fs="italic" size="sm">
+          {item.subtitle}
+        </Text>
       ) : null}
-      <span dangerouslySetInnerHTML={{ __html: item.description }}></span>
-      <div className="tags" style={{ display: 'flex', marginTop: 10 }}>
+      <Text size="sm" dangerouslySetInnerHTML={{ __html: item.description }} mt="xs" />
+      <Group gap="xs" mt="xs">
         {item.tags.sort().map((tag) => (
-          <div
-            key={tag}
-            className="card h-100"
-            style={{ fontSize: '10pt', color: 'grey', marginRight: 5, padding: 2 }}
-          >
+          <Badge key={tag} variant="light" size="sm">
             {tag}
-          </div>
+          </Badge>
         ))}
-      </div>
-    </div>
+      </Group>
+    </Card>
   )
 }
