@@ -3,7 +3,7 @@ name: Publish GitHub Pages
 on:
   push:
     branches:
-      - react
+      - main
 
 jobs:
   deploy:
@@ -18,24 +18,27 @@ jobs:
         with:
           fetch-depth: 2
 
-      # Set up Node.js
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Replace with the Node.js version you need
+          node-version: '20'
+          cache: 'pnpm'
 
-      # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
-      # Run the npm script
-      - name: Predeploy
-        run: npm run predeploy
+      - name: Build
+        run: pnpm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/react'
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: main
+          publish_dir: ./dist
+          publish_branch: gh-pages
