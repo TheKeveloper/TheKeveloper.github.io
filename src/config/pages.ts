@@ -1,23 +1,23 @@
-import { HomePage } from '../pages/HomePage'
-import { ProjectsPage } from '../pages/ProjectsPage'
-import { ExperiencePage } from '../pages/ExperiencePage'
+import { HomePage } from "../pages/HomePage";
+import { ProjectsPage } from "../pages/ProjectsPage";
+import { ExperiencePage } from "../pages/ExperiencePage";
 
 const pages = [
   {
-    title: 'Home',
-    route: '/',
+    title: "Home",
+    route: "/",
     component: HomePage,
   },
   {
-    title: 'Projects',
-    route: '/projects',
+    title: "Projects",
+    route: "/projects",
     component: ProjectsPage,
   },
   {
-    title: 'Experience',
-    route: '/experience',
+    title: "Experience",
+    route: "/experience",
     component: ExperiencePage,
   },
-]
+];
 
-export default pages
+export default pages;
