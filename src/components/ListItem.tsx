@@ -1,17 +1,17 @@
-import { Card, Text, Group, Badge, Anchor } from '@mantine/core'
+import { Card, Text, Group, Badge, Anchor } from "@mantine/core";
 
 export interface ItemData {
-  title: string
-  date: string
-  url?: string
-  repo?: string
-  subtitle?: string
-  description: string
-  tags: string[]
+  title: string;
+  date: string;
+  url?: string;
+  repo?: string;
+  subtitle?: string;
+  description: string;
+  tags: string[];
 }
 
 interface ListItemProps {
-  item: ItemData
+  item: ItemData;
 }
 
 export function ListItem({ item }: ListItemProps) {
@@ -25,9 +25,14 @@ export function ListItem({ item }: ListItemProps) {
             </Anchor>
           ) : (
             item.title
-          )}{' '}
+          )}{" "}
           {item.repo ? (
-            <Anchor href={item.repo} target="_blank" rel="noopener noreferrer" size="sm">
+            <Anchor
+              href={item.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              size="sm"
+            >
               (GitHub)
             </Anchor>
           ) : null}
@@ -41,7 +46,11 @@ export function ListItem({ item }: ListItemProps) {
           {item.subtitle}
         </Text>
       ) : null}
-      <Text size="sm" dangerouslySetInnerHTML={{ __html: item.description }} mt="xs" />
+      <Text
+        size="sm"
+        dangerouslySetInnerHTML={{ __html: item.description }}
+        mt="xs"
+      />
       <Group gap="xs" mt="xs">
         {item.tags.sort().map((tag) => (
           <Badge key={tag} variant="light" size="sm">
@@ -50,5 +59,5 @@ export function ListItem({ item }: ListItemProps) {
         ))}
       </Group>
     </Card>
-  )
+  );
 }

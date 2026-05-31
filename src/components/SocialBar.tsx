@@ -1,11 +1,14 @@
-import { Group, Anchor } from '@mantine/core'
+import { Group, Anchor } from "@mantine/core";
 
 const social_links = [
-  { text: 'GitHub', url: 'https://github.com/TheKeveloper' },
-  { text: 'Email', url: 'mailto:keveloper@gmail.com' },
-  { text: 'LinkedIn', url: 'https://www.linkedin.com/in/kevin-bi-006426148/' },
-  { text: 'StackOverflow', url: 'https://stackoverflow.com/users/8371811/keveloper' },
-]
+  { text: "GitHub", url: "https://github.com/TheKeveloper" },
+  { text: "Email", url: "mailto:keveloper@gmail.com" },
+  { text: "LinkedIn", url: "https://www.linkedin.com/in/kevin-bi-006426148/" },
+  {
+    text: "StackOverflow",
+    url: "https://stackoverflow.com/users/8371811/keveloper",
+  },
+];
 
 export function SocialBar() {
   return (
@@ -23,5 +26,5 @@ export function SocialBar() {
         </Anchor>
       ))}
     </Group>
-  )
+  );
 }
