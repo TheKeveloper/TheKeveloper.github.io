@@ -1,3 +1,5 @@
+import { Group, Anchor } from '@mantine/core'
+
 const social_links = [
   { text: 'GitHub', url: 'https://github.com/TheKeveloper' },
   { text: 'Email', url: 'mailto:keveloper@gmail.com' },
@@ -7,18 +9,19 @@ const social_links = [
 
 export function SocialBar() {
   return (
-    <div style={{ textAlign: 'center', marginBottom: 10 }}>
+    <Group justify="center" gap="xl" mb="xs">
       {social_links.map((link) => (
-        <a
+        <Anchor
           key={link.text}
           href={link.url}
-          style={{ marginLeft: 20, marginRight: 20, fontSize: '14pt' }}
           target="_blank"
           rel="noopener noreferrer"
+          fw={700}
+          size="lg"
         >
-          <strong>{link.text}</strong>
-        </a>
+          {link.text}
+        </Anchor>
       ))}
-    </div>
+    </Group>
   )
 }

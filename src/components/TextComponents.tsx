@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Title, Box } from '@mantine/core'
 
 interface SectionProps {
   title?: string
@@ -7,13 +8,9 @@ interface SectionProps {
 
 export function Section({ title, children }: SectionProps) {
   return (
-    <div>
-      {title ? (
-        <div className="row">
-          <h3>{title}</h3>
-        </div>
-      ) : null}
-      <div className="row">{children}</div>
-    </div>
+    <Box>
+      {title ? <Title order={3}>{title}</Title> : null}
+      <Box>{children}</Box>
+    </Box>
   )
 }

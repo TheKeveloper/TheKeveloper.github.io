@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import Select from 'react-select'
-import makeAnimated from 'react-select/animated'
+import { MultiSelect } from '@mantine/core'
 import { ListItem, ItemData } from './ListItem'
 import { ScrollableListView } from './ScrollableListView'
 
@@ -11,32 +10,20 @@ interface ItemsDisplayProps {
 
 export function ItemsDisplay({ tags, items }: ItemsDisplayProps) {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const animatedComponents = makeAnimated()
-
-  const handleChange = (selected: unknown) => {
-    if (selected && Array.isArray(selected)) {
-      setSelectedTags(selected.map((s: { value: string }) => s.value))
-    } else {
-      setSelectedTags([])
-    }
-  }
 
   const displayedItems = items.filter((item) =>
     selectedTags.every((tag) => item.tags.includes(tag))
   )
 
   return (
-    <div className="ItemDisplay">
-      <Select
-        isMulti
-        closeMenuOnSelect={false}
-        name="tags"
-        options={Object.values(tags).map((tag) => ({ value: tag, label: tag }))}
-        className="basic-multi-select"
-        classNamePrefix="select"
-        components={animatedComponents}
-        onChange={handleChange}
+    <div>
+      <MultiSelect
+        data={Object.values(tags).map((tag) => ({ value: tag, label: tag }))}
+        value={selectedTags}
+        onChange={setSelectedTags}
         placeholder="Filter tags..."
+        clearable
+        searchable
       />
       <ScrollableListView
         items={displayedItems.map((item) => (

@@ -1,24 +1,28 @@
 import { NavLink } from 'react-router-dom'
+import { Group, Anchor } from '@mantine/core'
 import pages from '../config/pages'
 
 export function NavigationBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="collapse navbar-collapse" id="navbarColor01">
-        <ul className="navbar-nav mr-auto">
-          {pages.map((page) => (
-            <li key={page.route} className="nav-item">
-              <NavLink
-                className={({ isActive }) => `nav-link${isActive ? ' nav-active' : ''}`}
-                to={page.route}
-                end
-              >
-                {page.title}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <Group justify="center" gap="lg" py="sm" style={{ borderBottom: '1px solid var(--mantine-color-gray-3)' }}>
+      {pages.map((page) => (
+        <NavLink
+          key={page.route}
+          to={page.route}
+          end
+          style={{ textDecoration: 'none' }}
+        >
+          {({ isActive }) => (
+            <Anchor
+              component="span"
+              fw={isActive ? 700 : 400}
+              c={isActive ? 'blue' : 'dimmed'}
+            >
+              {page.title}
+            </Anchor>
+          )}
+        </NavLink>
+      ))}
+    </Group>
   )
 }
