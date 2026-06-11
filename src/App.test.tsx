@@ -33,4 +33,21 @@ describe("App", () => {
     await screen.findByText("Kevin Bi");
     expect(screen.getByText("Kevin Bi")).toBeTruthy();
   });
+
+  it("renders jobs with their roles on the experience page", async () => {
+    const router = createRouter({
+      routeTree,
+      history: createMemoryHistory({ initialEntries: ["/experience"] }),
+    });
+
+    render(
+      <MantineProvider>
+        <RouterProvider router={router} />
+      </MantineProvider>,
+    );
+
+    await screen.findByText("Palantir Technologies");
+    expect(screen.getByText("Technical Lead")).toBeTruthy();
+    expect(screen.getByText("Software Engineering Intern")).toBeTruthy();
+  });
 });

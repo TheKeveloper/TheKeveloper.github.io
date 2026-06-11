@@ -1,5 +1,3 @@
-import { ItemData } from "../components/ListItem";
-
 const tags: Record<string, string> = {
   internship: "Internship",
   academic: "Academic",
@@ -11,88 +9,180 @@ const tags: Record<string, string> = {
   fulltime: "Full time",
 };
 
-const experiences: ItemData[] = [
+export interface RoleData {
+  title: string;
+  start: string;
+  /** When the role ended. Omit for ongoing roles (displayed as "Present"). */
+  end?: string;
+  description: string;
+  accomplishments?: string[];
+}
+
+export interface ExperienceData {
+  title: string;
+  url?: string;
+  tags: string[];
+  /** Ordered most recent first. */
+  roles: RoleData[];
+}
+
+export function formatDateRange(start: string, end?: string): string {
+  if (end === undefined) {
+    return `${start} – Present`;
+  }
+  if (end === start) {
+    return start;
+  }
+  return `${start} – ${end}`;
+}
+
+const experiences: ExperienceData[] = [
   {
     title: "Palantir Technologies",
-    date: "2021-Current",
     url: "https://www.palantir.com/",
-    subtitle: "Technical Lead",
-    description: "Backend lead for the Simulation and Unmanned Systems team.",
-    tags: [tags.fulltime, tags.leadership],
+    tags: [tags.fulltime, tags.leadership, tags.internship, tags.tech],
+    roles: [
+      {
+        title: "Technical Lead",
+        start: "2021",
+        description:
+          "Backend lead for the Simulation and Unmanned Systems team.",
+      },
+      {
+        title: "Software Engineering Intern",
+        start: "Summer 2020",
+        end: "Summer 2020",
+        description:
+          "Worked on the Gotham Workbench team, improving the build system and developer tools.",
+        accomplishments: [
+          "Automated scaling of AWS server allocations, reducing costs by an estimated $8,000 per month.",
+          "Reduced runtime of the test data ingestion system by ~4x by improving concurrency and speeding up database transactions.",
+          "Created dashboards to analyze problems with failing builds and to identify non-deterministic tests.",
+          "Enabled workflow management integration and build metadata through commit messages.",
+        ],
+      },
+    ],
   },
   {
     title: "Bridgewater Associates",
-    date: "July-August 2020",
     url: "https://www.bridgewater.com/",
-    subtitle: "Investment Associate Intern",
-    description:
-      "Participating in the Bridgwater Investment Associates internship program starting July 2020.",
     tags: [tags.internship, tags.finance],
+    roles: [
+      {
+        title: "Investment Associate Intern",
+        start: "July 2020",
+        end: "August 2020",
+        description:
+          "Participated in the Bridgewater Investment Associates internship program.",
+      },
+    ],
   },
   {
     title: "Harvard Open Data Project",
-    date: "2018 - 2020",
-    subtitle: "President, Board Member",
     url: "http://hodp.org",
-    description:
-      "I was the President of the Harvard Open Data Project. I helped expand the club from 10 active members to over 30 active members during my year as President. I launched several new initiatives, including a survey group, an automated data scraping system, a Wiki, and a Predictions game. I also reorganized the board to better distribute work and instituted new project management systems to ensure that worked was completed. Finally, I initiated our corporate sponsorships program,raising thousands of dollars to fund HODP projects and infrastructure.",
     tags: [tags.extracurricular, tags.leadership, tags.tech],
+    roles: [
+      {
+        title: "President",
+        start: "2019",
+        end: "2020",
+        description:
+          "Led the Harvard Open Data Project during my year as President.",
+        accomplishments: [
+          "Expanded the club from 10 active members to over 30 active members.",
+          "Launched several new initiatives, including a survey group, an automated data scraping system, a wiki, and a predictions game.",
+          "Reorganized the board to better distribute work and instituted new project management systems to ensure work was completed.",
+          "Initiated the corporate sponsorships program, raising thousands of dollars to fund HODP projects and infrastructure.",
+        ],
+      },
+      {
+        title: "Board Member",
+        start: "2018",
+        end: "2019",
+        description:
+          "Served on the board of the Harvard Open Data Project before becoming President.",
+      },
+    ],
   },
   {
-    title: "Economics Research Assistant",
-    date: "Fall 2019 - Current",
-    description:
-      "Worked as a research assistant to Professor Stefanie Stantcheva and Alberto Alesina. For Professor Stantcheva, I created a website and helped create/analyze a survey. For Professor Alesina, I helped review math for a political economy paper and helped debug R code for a statistical analysis.",
+    title: "Harvard Department of Economics",
     tags: [tags.academic],
+    roles: [
+      {
+        title: "Research Assistant",
+        start: "Fall 2019",
+        description:
+          "Research assistant to Professors Stefanie Stantcheva and Alberto Alesina.",
+        accomplishments: [
+          "For Professor Stantcheva, created a website and helped create and analyze a survey.",
+          "For Professor Alesina, reviewed math for a political economy paper and helped debug R code for a statistical analysis.",
+        ],
+      },
+    ],
   },
   {
-    title: "ECON 1011A Course Assistant",
-    date: "Fall 2019 - Current",
-    subtitle: "Microeconomic Theory: Advanced",
-    description:
-      "Helped teach the advanced microeconomic course by answering student questions, reviewing assignments, and holding office hours.",
+    title: "ECON 1011A: Microeconomic Theory, Advanced",
     tags: [tags.academic],
-  },
-  {
-    title: "Palantir Technologies",
-    url: "https://www.palantir.com/",
-    date: "Summer 2020",
-    subtitle: "Software Engineering Intern",
-    description: `I worked as a software engineering intern at Palantir technologies. I worked on the Gotham Workbench team, which involved improving the build system and dev tools. Some of the projects I worked on include:
-        <ul>
-            <li>Automated scaling of AWS server allocations, reducing costs by an estimated $8,000 per month.</li>
-            <li>Reducing runtime of test data ingestion system by ~4x by improving concurrency and speeding up database transactions.</li>
-            <li>Create dashboards to analyze problems with failing builds and to identify non-deterministic tests.</li>
-            <li>Enable workflow management integration and build metadata through commit messages.</li>
-        </ul>`,
-    tags: [tags.internship, tags.tech],
+    roles: [
+      {
+        title: "Course Assistant",
+        start: "Fall 2019",
+        description:
+          "Helped teach the advanced microeconomic theory course by answering student questions, reviewing assignments, and holding office hours.",
+      },
+    ],
   },
   {
     title: "Harvard Decision Science Lab",
-    subtitle: "Research Assistant",
     url: "http://decisionlab.harvard.edu/",
-    date: "Fall 2018",
-    description:
-      "Worked as a Research Assistant at the Harvard Decision Science Lab. I helped test out new psychology experiments and offered feedback to researchers. I also helped run the lab, including by making improvements to the finance tracking system on the website",
     tags: [tags.academic],
+    roles: [
+      {
+        title: "Research Assistant",
+        start: "Fall 2018",
+        end: "Fall 2018",
+        description:
+          "Helped test new psychology experiments and offered feedback to researchers.",
+        accomplishments: [
+          "Helped run the lab, including making improvements to the finance tracking system on the lab website.",
+        ],
+      },
+    ],
   },
   {
-    title: "Allianz Life Insurancy Company of North America",
+    title: "Allianz Life Insurance Company of North America",
     url: "https://www.allianzlife.com/",
-    subtitle: "IT Intern",
-    date: "Summer 2018",
-    description:
-      "Was named the intern of the year out of 60+ interns. Developed a proposal to implement an API for external data access that won proposal competition and was slated to be implemented. Created web apps for easily executing SQL queries and for automatically entering test data using Selenium. ",
     tags: [tags.internship, tags.tech],
+    roles: [
+      {
+        title: "IT Intern",
+        start: "Summer 2018",
+        end: "Summer 2018",
+        description: "Named the intern of the year out of 60+ interns.",
+        accomplishments: [
+          "Developed a proposal to implement an API for external data access that won the intern proposal competition and was slated to be implemented.",
+          "Created web apps for easily executing SQL queries and for automatically entering test data using Selenium.",
+        ],
+      },
+    ],
   },
   {
     title: "McCollum for Congress",
     url: "https://www.mccollumforcongress.com/",
-    subtitle: "Field Fellow",
-    date: "Summer 2016",
-    description:
-      "Workd as a Field Fellow for the campaign of Congresswoman Betty McCollumn (MN-4). Made phone calls and door knocked on behalf of the campaign. Also helped analyze precinct-level primary election results to better target campaign resources during the general election.",
     tags: [tags.internship, tags.political],
+    roles: [
+      {
+        title: "Field Fellow",
+        start: "Summer 2016",
+        end: "Summer 2016",
+        description:
+          "Worked as a Field Fellow for the re-election campaign of Congresswoman Betty McCollum (MN-04).",
+        accomplishments: [
+          "Made phone calls and door knocked on behalf of the campaign.",
+          "Analyzed precinct-level primary election results to better target campaign resources during the general election.",
+        ],
+      },
+    ],
   },
 ];
 
