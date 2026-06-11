@@ -1,5 +1,6 @@
 import { tags, projects } from "../config/projects";
 import { ItemsDisplay } from "../components/ItemsDisplay";
+import { ListItem } from "../components/ListItem";
 import Utils from "../Utils";
 
 export function ProjectsPage() {
@@ -9,7 +10,11 @@ export function ProjectsPage() {
       <h3 style={{ textAlign: "center", marginTop: 20, marginBottom: 20 }}>
         Projects
       </h3>
-      <ItemsDisplay tags={tags} items={projects} />
+      <ItemsDisplay
+        tags={tags}
+        items={projects}
+        renderItem={(item) => <ListItem key={item.title} item={item} />}
+      />
     </div>
   );
 }

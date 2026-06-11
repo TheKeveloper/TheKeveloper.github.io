@@ -1,5 +1,6 @@
 import { tags, experiences } from "../config/experience";
 import { ItemsDisplay } from "../components/ItemsDisplay";
+import { ExperienceItem } from "../components/ExperienceItem";
 import Utils from "../Utils";
 
 export function ExperiencePage() {
@@ -9,7 +10,11 @@ export function ExperiencePage() {
       <h3 style={{ textAlign: "center", marginTop: 20, marginBottom: 20 }}>
         Experience
       </h3>
-      <ItemsDisplay tags={tags} items={experiences} />
+      <ItemsDisplay
+        tags={tags}
+        items={experiences}
+        renderItem={(item) => <ExperienceItem key={item.title} item={item} />}
+      />
     </div>
   );
 }

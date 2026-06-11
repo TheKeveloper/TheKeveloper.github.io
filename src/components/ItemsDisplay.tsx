@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { MultiSelect } from "@mantine/core";
-import { ListItem, ItemData } from "./ListItem";
 import { ScrollableListView } from "./ScrollableListView";
 
-interface ItemsDisplayProps {
+interface ItemsDisplayProps<T extends { tags: string[] }> {
   tags: Record<string, string>;
-  items: ItemData[];
+  items: T[];
+  renderItem: (item: T) => ReactNode;
 }
 
-export function ItemsDisplay({ tags, items }: ItemsDisplayProps) {
+export function ItemsDisplay<T extends { tags: string[] }>({
+  tags,
+  items,
+  renderItem,
+}: ItemsDisplayProps<T>) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const displayedItems = items.filter((item) =>
@@ -25,11 +29,7 @@ export function ItemsDisplay({ tags, items }: ItemsDisplayProps) {
         clearable
         searchable
       />
-      <ScrollableListView
-        items={displayedItems.map((item) => (
-          <ListItem key={item.title} item={item} />
-        ))}
-      />
+      <ScrollableListView items={displayedItems.map(renderItem)} />
     </div>
   );
 }
