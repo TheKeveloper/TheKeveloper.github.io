@@ -46,8 +46,7 @@ const experiences: ExperienceData[] = [
       {
         title: "Cofounder and CEO",
         start: "Mar 2025",
-        description:
-          "Building AI products for human-in-the-loop robotic process automation and research workflows.",
+        description: "Founded YCombinator-backed startup",
         accomplishments: [
           "Launched a human-in-the-loop RPA platform and sold $24K ARR.",
           "Created an AI research assistant with 100+ installs.",
