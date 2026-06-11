@@ -47,7 +47,10 @@ describe("App", () => {
     );
 
     await screen.findByText("Palantir Technologies");
-    expect(screen.getByText("Technical Lead")).toBeTruthy();
+    expect(screen.getByText("Percival")).toBeTruthy();
+    expect(
+      screen.getByText("Engineering Lead: Simulation and Unmanned Systems"),
+    ).toBeTruthy();
     expect(screen.getByText("Software Engineering Intern")).toBeTruthy();
   });
 });

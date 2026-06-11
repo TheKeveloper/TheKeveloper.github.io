@@ -8,7 +8,10 @@ export function HomePage() {
   return (
     <div className="HomePage">
       <Section title="Hello!">
-        <p>I'm Kevin.</p>
+        <p>
+          I'm Kevin. I grew up in Minnesota and now I live in Princeton, New
+          Jersey.
+        </p>
         <p>
           I'm currently the cofounder and CEO of{" "}
           <Anchor href="https://percy.tech/" target="_blank">

@@ -7,6 +7,8 @@ const tags: Record<string, string> = {
   leadership: "Leadership",
   political: "Political",
   fulltime: "Full time",
+  startup: "Startup",
+  ai: "AI",
 };
 
 export interface RoleData {
@@ -38,15 +40,60 @@ export function formatDateRange(start: string, end?: string): string {
 
 const experiences: ExperienceData[] = [
   {
-    title: "Palantir Technologies",
-    url: "https://www.palantir.com/",
-    tags: [tags.fulltime, tags.leadership, tags.internship, tags.tech],
+    title: "Percival",
+    tags: [tags.fulltime, tags.leadership, tags.startup, tags.ai, tags.tech],
     roles: [
       {
-        title: "Technical Lead",
-        start: "2021",
+        title: "Cofounder and CEO",
+        start: "Mar 2025",
         description:
-          "Backend lead for the Simulation and Unmanned Systems team.",
+          "Building AI products for human-in-the-loop robotic process automation and research workflows.",
+        accomplishments: [
+          "Launched a human-in-the-loop RPA platform and sold $24K ARR.",
+          "Created an AI research assistant with 100+ installs.",
+          "Raised $3M from Y Combinator and other investors.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Palantir Technologies",
+    url: "https://www.palantir.com/",
+    tags: [tags.fulltime, tags.leadership, tags.internship, tags.ai, tags.tech],
+    roles: [
+      {
+        title: "Engineering Lead: Simulation and Unmanned Systems",
+        start: "Aug 2023",
+        end: "Mar 2025",
+        description:
+          "Led engineering for unmanned aerial systems products spanning video live streaming, mission simulation, and drone control.",
+        accomplishments: [
+          "Enabled high availability for a video live streaming service by migrating it to a multi-node containerized architecture.",
+          "Reduced production incidents for the video live streaming service by 40%.",
+          "Managed 6 direct reports.",
+          "Made final hiring decisions for new grad and intern software engineering candidates as hiring manager.",
+        ],
+      },
+      {
+        title: "Backend Lead: Ground Control Station",
+        start: "Jan 2023",
+        end: "Aug 2023",
+        description:
+          "Led backend development for Palantir's first autonomous drone control system.",
+        accomplishments: [
+          "Implemented natural language drone control that was shown at AUSA 2023 and Davos 2024.",
+        ],
+      },
+      {
+        title: "Software Engineer: Video and Sensor Inference Platform",
+        start: "Jul 2021",
+        end: "Jan 2023",
+        description:
+          "Built video, sensor inference, and imagery pipelines for operational AI workflows.",
+        accomplishments: [
+          "Developed a system for automated sensor cueing based on computer vision detections in video feeds.",
+          "Implemented a low-latency satellite imagery pipeline that reduced inference time from 90 minutes to 10 minutes.",
+        ],
       },
       {
         title: "Software Engineering Intern",
