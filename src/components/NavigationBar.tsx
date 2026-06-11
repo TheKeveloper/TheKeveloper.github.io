@@ -1,10 +1,10 @@
+import { Anchor, Group } from "@mantine/core";
 import { Link, useMatchRoute } from "@tanstack/react-router";
-import { Group, Anchor } from "@mantine/core";
 
 const pages = [
   { title: "Home", route: "/" as const },
-  { title: "Projects", route: "/projects" as const },
   { title: "Experience", route: "/experience" as const },
+  { title: "Projects", route: "/projects" as const },
 ];
 
 export function NavigationBar() {
