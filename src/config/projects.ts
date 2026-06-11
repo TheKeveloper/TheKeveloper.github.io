@@ -16,7 +16,7 @@ const projects: ItemData[] = [
   {
     title: "ECON 1011A Textbook",
     date: "2020",
-    url: "https://github.com/TheKeveloper/ECON-1011A-Textbook/blob/main/textbook.pdf",
+    url: "https://github.com/TheKeveloper/ECON-1011A-Textbook/blob/master/textbook.pdf",
     description:
       "Co-authoring a textbook to assist in online learning for Harvard's ECON 1011A: Intermediate Microeconomics - Advanced.",
     tags: [tags.academic],
